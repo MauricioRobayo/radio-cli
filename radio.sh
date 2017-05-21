@@ -4,8 +4,7 @@ realpath="$(realpath $0)"
 radiostations="${realpath%/*}/radiostations"
 
 if [[ "$1" =~ ^http ]]; then
-   printf "Name for '$1': " 
-   read name
+   read name -p "Name for '$1': "
    echo "${name},${1}" >> "$radiostations"
 else
     i=0
